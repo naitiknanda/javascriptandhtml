@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Clock Light</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      transition: 0.5s;
+      color: white;
+    }
+
+    #time {
+      font-size: 40px;
+      margin-top: 20%;
+    }
+  </style>
+</head>
+<body>
+<div id="time"></div>
+<script>
+function updateClock() {
+  let now = new Date();
+  let h = now.getHours();
+  let m = now.getMinutes();
+  let s = now.getSeconds();
+  document.getElementById("time").innerText =
+    h + ":" + m + ":" + s;
+
+  if (h >= 6 && h < 12) {
+    document.body.style.background = "skyblue"; 
+  } 
+  else if (h >= 12 && h < 18) {
+    document.body.style.background = "orange"; 
+  } 
+  else if (h >= 18 && h < 21) {
+    document.body.style.background = "purple"; 
+  } 
+  else {
+    document.body.style.background = "black"; 
+  }
+}
+setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
